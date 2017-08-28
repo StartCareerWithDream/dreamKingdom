@@ -1,7 +1,7 @@
 /**
  * Created by yangwangwang on 2017/8/24.
  */
-angular.module('app').config(['$locationProvider', '$routeProvider',
+/*angular.module('app').config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
        // $locationProvider.hashPrefix('!');
         //配置$route服务
@@ -16,4 +16,4 @@ angular.module('app').config(['$locationProvider', '$routeProvider',
             template: '<my-select></my-select>'
         })
     }
-]);
+]);*/
