@@ -1,1 +1,1 @@
-"# dreamKingdom" 
+本项目为个人创建的angularJS应用模板
