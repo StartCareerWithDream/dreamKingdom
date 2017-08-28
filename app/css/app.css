@@ -1,0 +1,70 @@
+div[mySelect]{
+    height:auto;
+    width:50%;
+    margin:0 auto;
+    border-radius: 5px;
+    box-shadow:0 0 10px  #aaa;
+    position: relative;
+}
+
+div[mySelect] ul::-webkit-scrollbar {
+    width:10px;
+    height:3px;
+}
+div[mySelect] ul::-webkit-scrollbar-button    {
+    background-color:#ccc;
+}
+div[mySelect] ul::-webkit-scrollbar-track     {
+    background:#fff;
+}
+div[mySelect] ul::-webkit-scrollbar-track-piece {
+    background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png);
+}
+div[mySelect] ul::-webkit-scrollbar-thumb{
+    background:#666;
+    border-radius:5px;
+}
+div[mySelect] ul::-webkit-scrollbar-corner {
+    background:#82AFFF;
+}
+div[mySelect] ul::-webkit-scrollbar-resizer  {
+    background:#000;
+}
+
+div[mySelect] ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+    max-height: 300px;
+    overflow: auto;
+}
+
+div[mySelect] ul li{
+    height:30px;
+    line-height: 30px;
+    background: #fff;
+    padding:0 10px;
+    transition:all 0.2s;
+}
+div[mySelect] ul li:hover {
+    background: #11C3FE;
+    color:#fff;
+}
+
+div[mySelect] label{
+    width:100%;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+span[triangle]{
+    position: absolute;
+    top: 15px;
+    right:10px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid #000;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}

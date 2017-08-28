@@ -1,0 +1,12 @@
+
+<div class="container-fluid">
+    <ul>
+        <li  ng-repeat="item in $ctrl.data">
+            <p>姓名：{{item.name}}</p>
+            <p>年龄：{{item.age}}</p>
+            <p>出生日期：{{item.birthday}}</p>
+        </li>
+    </ul>
+</div>
+
+<pre>{{$ctrl.data | json}}</pre>
