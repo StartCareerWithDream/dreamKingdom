@@ -9,16 +9,28 @@
   </head>
   <body>
 
-  <ul>
-    <li><a href="#/myinput">测试模板</a></li>
-    <li><a href="#/userlist">用户列表</a></li>
-    <li><a href="#/mySelect">自定义下拉框</a></li>
-  </ul>
+  <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+          <a class="navbar-brand">DreamKingdom ng-components</a>
+      </div>
+  </nav>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-2">
+              <ul>
+                  <li>
+                      <a ui-sref="login">登录模板</a>
+                  </li>
+                  <li>
+                      <a ui-sref="mySelect">自定义下拉框</a>
+                  </li>
+              </ul>
+          </div>
+          <div class="col-lg-10" ui-view=""></div>
+      </div>
+  </div>
 
-   <div ng-view></div>
-
-
-    <!-- 全局script文件 start -->
+  <!-- 全局script文件 start -->
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
