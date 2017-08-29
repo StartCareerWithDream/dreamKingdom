@@ -1,6 +1,6 @@
 <div mySelect>
     <input  ng-click="$ctrl.changeStatus()" type="text" placeholder="请选择" class="form-control" ng-model="$ctrl.selectValue" readonly/><span triangle></span>
     <ul ng-show="$ctrl.showList">
-       <li ng-repeat="item in $ctrl.dataList"><label ng-click="$ctrl.selectOption();">{{item.name}}<input type="radio" ng-value="item.name" name="mySelectRadio" ng-model="$ctrl.selectValue" hidden></label></li>
+       <li ng-repeat="item in $ctrl.data"><label ng-click="$ctrl.selectOption();">{{item.name}}<input type="radio" ng-value="item.name" name="mySelectRadio" ng-model="$ctrl.selectValue" hidden></label></li>
     </ul>
 </div>

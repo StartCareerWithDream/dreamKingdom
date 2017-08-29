@@ -7,7 +7,6 @@ angular.module('mySelect').
         controller:function() {
             var self = this;
 
-            this.dataList = [{name:'请选择'}];
 
             this.selectValue = '';
 
@@ -22,7 +21,7 @@ angular.module('mySelect').
             }
         },
         bindings:{
-            dataList:'<'          //  '<'表示单项绑定
+            data:'='          //  '<'表示单向绑定,'='双向绑定
         }
     });
 
