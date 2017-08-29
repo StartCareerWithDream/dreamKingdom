@@ -1,7 +1,4 @@
 div[mySelect]{
-    height:auto;
-    width:50%;
-    margin:0 auto;
     border-radius: 5px;
     box-shadow:0 0 10px  #aaa;
     position: relative;
@@ -18,7 +15,9 @@ div[mySelect] ul::-webkit-scrollbar-track     {
     background:#fff;
 }
 div[mySelect] ul::-webkit-scrollbar-track-piece {
-    background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png);
+    background:#fff;
+    border:1px solid rgba(200,200,200,.5);
+    box-shadow:  0 0 5px #eee inset;
 }
 div[mySelect] ul::-webkit-scrollbar-thumb{
     background:#666;
@@ -55,6 +54,10 @@ div[mySelect] label{
     width:100%;
     font-weight: normal;
     cursor: pointer;
+}
+
+div[mySelect] input[readonly]{
+    background: #fff;
 }
 
 span[triangle]{

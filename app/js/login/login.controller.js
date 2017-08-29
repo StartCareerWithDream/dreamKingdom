@@ -9,4 +9,8 @@ function loginController($scope){
         userName : '',
         password : ''
     };
+
+    $scope.dataList = [
+        {name:'杨旺旺'}
+    ];
 }

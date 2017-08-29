@@ -4,14 +4,13 @@
 angular.module('mySelect').
     component('mySelect',{
         templateUrl:'component/mySelect/mySelect.template.html',
-        controller:['$http',function($http) {
-            this.dataList = [];
+        controller:function() {
             var self = this;
-            $http.get('json/myTest/myTest.json').then(function (res) {
-                self.dataList = res.data;
-            });
+
+            this.dataList = [{name:'请选择'}];
 
             this.selectValue = '';
+
             this.showList = false;
 
             this.changeStatus = function () {
@@ -21,7 +20,11 @@ angular.module('mySelect').
             this.selectOption = function () {
                 this.showList = false;
             }
-        }]});
+        },
+        bindings:{
+            dataList:'<'          //  '<'表示单项绑定
+        }
+    });
 
 
 

@@ -8,7 +8,20 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider',function($s
     $stateProvider
         .state('login', {
             url: '/login',
-            templateUrl: './views/login/login.html'
+            templateUrl: './views/login/login.html',
+            controller:'login.controller',
+            resolve :{
+                deps:['$ocLazyLoad',function($ocLazyLoad){
+                    return $ocLazyLoad.load({
+                        name:'app',
+                        files:[
+                            './js/login/login.controller.js'
+                        ]
+                    });
+                }
+
+                ]
+            }
         })
         .state('mySelect', {
             url: '/mySelect',
