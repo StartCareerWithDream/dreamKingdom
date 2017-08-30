@@ -6,6 +6,15 @@ angular.module('app').controller('citySelector.controller',['$http',citySelector
 function citySelectorController($http){
     var self = this;
     this.addressList = [];
+    this.address = {
+        province : '',
+        city : '',
+        district :'',
+        selected :''
+    };
+
+    this.street = '';
+
     $http.get('json/citySelector.json').then(function (res) {
        self.addressList = res.data;
     });

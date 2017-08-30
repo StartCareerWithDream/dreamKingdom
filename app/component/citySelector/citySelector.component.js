@@ -19,12 +19,6 @@ angular.module('citySelector').component('citySelector',{
             district :false
         };
 
-        this.address = {
-            province : '',
-            city : '',
-            district :'',
-            selected :''
-        };
 
         this.selectProvince = function () {
             if(self.address.selected == ''){
@@ -57,15 +51,20 @@ angular.module('citySelector').component('citySelector',{
 
         this.selectOver = function (index) {
             self.currentIndex.district = index;
+        };
+
+        this.confirmSle = function () {
             self.pageSwitch = {
                 province : false,
                 city : false,
                 district :false
             };
-            self.address.selected = self.address.province+'/'+self.address.city+'/'+self.address.district;
-        }
+            self.address.selected = self.address.province+'/'+self.address.city + '/'+self.address.district+'  '+self.street;
+        };
     },
     bindings:{
-        data:"="
+        data:"=",
+        address:"=",
+        street:'='
     }
 });

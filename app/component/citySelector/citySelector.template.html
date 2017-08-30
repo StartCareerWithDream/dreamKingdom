@@ -1,26 +1,40 @@
 <div citySelector>
-    <input class="form-control" placeholder="省份/城市/区县" readonly ng-click="$ctrl.selectProvince()" ng-model="$ctrl.address.selected"><span triangle="citySelector"></span>
-    <div citySelectArea>
-        <ul province class="col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-show="$ctrl.pageSwitch.province" >
-            <li ng-click="$ctrl.selectCity($index)" ng-repeat="item in $ctrl.data.province" ng-class="{'active':$ctrl.currentIndex.province === $index}">
-               <label>
-                   <input type="radio" name="province" ng-value="item.name" ng-model="$ctrl.address.province">{{item.name}}
-               </label>
-            </li>
-        </ul>
-        <ul city class="col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-show="$ctrl.pageSwitch.city">
-            <li ng-click="$ctrl.selectDistrict($index)" ng-repeat="item in $ctrl.data.province[$ctrl.currentIndex.province].city" ng-class="{'active':$ctrl.currentIndex.city === $index}">
-                <label>
-                    <input type="radio" name="city" ng-value="item.name" ng-model="$ctrl.address.city">{{item.name}}
-                </label>
-            </li>
-        </ul>
-        <ul district class="col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-show="$ctrl.pageSwitch.district">
-            <li ng-click="$ctrl.selectOver($index)"  ng-repeat="item in $ctrl.data.province[$ctrl.currentIndex.province].city[$ctrl.currentIndex.city].district" ng-class="{'active':$ctrl.currentIndex.district === $index}">
-                <label>
-                    <input type="radio" name="district" ng-value="item" ng-model="$ctrl.address.district">{{item}}
-                </label>
-            </li>
-        </ul>
+    <input class="form-control" placeholder="省份/城市/区县" readonly ng-click="$ctrl.selectProvince()" ng-model="$ctrl.address.selected"><span triangle></span>
+    <div citySelectArea ng-show="$ctrl.pageSwitch.province">
+        <div class="form-group">
+            <ul province class="col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-show="$ctrl.pageSwitch.province" >
+                <li ng-click="$ctrl.selectCity($index)" ng-repeat="item in $ctrl.data.province" ng-class="{'active':$ctrl.currentIndex.province === $index}">
+                    <label>
+                        <input type="radio" name="province" ng-value="item.name" ng-model="$ctrl.address.province">{{item.name}}
+                    </label>
+                </li>
+            </ul>
+            <ul city class="col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-show="$ctrl.pageSwitch.city">
+                <li ng-click="$ctrl.selectDistrict($index)" ng-repeat="item in $ctrl.data.province[$ctrl.currentIndex.province].city" ng-class="{'active':$ctrl.currentIndex.city === $index}">
+                    <label>
+                        <input type="radio" name="city" ng-value="item.name" ng-model="$ctrl.address.city">{{item.name}}
+                    </label>
+                </li>
+            </ul>
+            <ul district class="col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-show="$ctrl.pageSwitch.district">
+                <li ng-click="$ctrl.selectOver($index)"  ng-repeat="item in $ctrl.data.province[$ctrl.currentIndex.province].city[$ctrl.currentIndex.city].district" ng-class="{'active':$ctrl.currentIndex.district === $index}">
+                    <label>
+                        <input type="radio" name="district" ng-value="item" ng-model="$ctrl.address.district">{{item}}
+                    </label>
+                </li>
+            </ul>
+            <div style="clear: both"></div>
+        </div>
+
+        <div citySelectorStreet class="form-group">
+            <input class="form-control" placeholder="请输入详细地址，如街道门牌号等" ng-model="$ctrl.street">
+        </div>
+
+
+        <div class="form-group">
+            <button class="btn btn-info" ng-click="$ctrl.confirmSle()">确认地址</button>
+        </div>
     </div>
 </div>
+
+
