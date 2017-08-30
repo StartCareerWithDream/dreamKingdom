@@ -23,4 +23,21 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider',function($s
                 ]
             }
         })
+        .state('citySelector', {
+            url: '/citySelector',
+            templateUrl: './views/citySelector/citySelector.html',
+            controller:'citySelector.controller as ctrl',
+            resolve :{
+                deps:['$ocLazyLoad',function($ocLazyLoad){
+                    return $ocLazyLoad.load({
+                        name:'app',
+                        files:[
+                            './js/citySelector/citySelector.controller.js'
+                        ]
+                    });
+                }
+
+                ]
+            }
+        })
 }]);

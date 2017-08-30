@@ -1,3 +1,14 @@
+/*
+    全局样式表
+*/
+.active{
+    background:#11C3FE!important;
+    color:#fff!important;
+}
+
+/*
+    自定义下拉框样式表
+*/
 div[mySelect]{
     width:40%;
     border-radius: 5px;
@@ -73,3 +84,99 @@ span[triangle]{
     border-left: 8px solid transparent;
     border-bottom: 8px solid transparent;
 }
+span[triangle="citySelector"]{
+    right:21%;
+}
+
+
+/*
+    城市选择器样式表
+*/
+div[citySelector]{
+    position: relative;
+}
+div[citySelectArea]:after,div[citySelectArea]:before{
+    overflow:hidden;
+    clear:both;
+    display: block;
+    content:' ';
+}
+
+div[citySelector] input{
+    width:80%;
+    cursor: pointer;
+}
+div[citySelector] input[readonly]{
+    background: #fff;
+}
+
+div[citySelectArea]{
+    width:auto;
+    height:auto;
+}
+
+div[citySelectArea] ul{
+    border:1px solid #ccc;
+    border-top:none;
+    list-style: none;
+    margin:0;
+    padding:0;
+    height:auto;
+    max-height:300px;
+    overflow: auto;
+    box-shadow: 0 0 5px #ccc;
+}
+
+div[citySelectArea] ul[city],div[citySelectArea] ul[district]{
+    border-left:none;
+}
+
+div[citySelectArea] ul li{
+    height:30px;
+    line-height: 30px;
+    background: #fff;
+    padding:0 15px;
+    transition:all 0.2s;
+}
+div[citySelectArea] ul li:hover {
+    background: #11C3FE;
+    color:#fff;
+}
+
+div[citySelectArea] label{
+    width:100%;
+    margin:0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+div[citySelectArea] input[type="radio"]{
+    display: none;
+}
+
+div[citySelectArea] ul::-webkit-scrollbar {
+    width:10px;
+    height:3px;
+}
+div[citySelectArea] ul::-webkit-scrollbar-button    {
+    background-color:#ccc;
+}
+div[citySelectArea] ul::-webkit-scrollbar-track     {
+    background:#fff;
+}
+div[citySelectArea] ul::-webkit-scrollbar-track-piece {
+    background:#fff;
+    border:1px solid rgba(200,200,200,.5);
+    box-shadow:  0 0 5px #eee inset;
+}
+div[citySelectArea] ul::-webkit-scrollbar-thumb{
+    background:#666;
+    border-radius:5px;
+}
+div[citySelectArea] ul::-webkit-scrollbar-corner {
+    background:#82AFFF;
+}
+div[citySelectArea] ul::-webkit-scrollbar-resizer  {
+    background:#000;
+}
+
