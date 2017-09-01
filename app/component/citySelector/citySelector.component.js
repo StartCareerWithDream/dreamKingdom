@@ -6,6 +6,7 @@ angular.module('citySelector').component('citySelector',{
     controller:function () {
         var self = this;
 
+        //当前选择项的索引值
         this.currentIndex = {
             province:'',
             city: '',
@@ -19,7 +20,9 @@ angular.module('citySelector').component('citySelector',{
             district :false
         };
 
-
+        /**
+         * 点击选择框显示选择省份菜单
+         */
         this.selectProvince = function () {
             if(self.address.selected == ''){
                 self.pageSwitch.province = true;
@@ -32,27 +35,47 @@ angular.module('citySelector').component('citySelector',{
                     self.pageSwitch.district = self.pageSwitch.city;
                 }
             }
-
         };
 
+        /**
+         * 选择省份
+         * @param index
+         */
         this.selectCity = function (index) {
             self.currentIndex.province = index;
             self.currentIndex.city = '';
             self.currentIndex.district = '';
             self.pageSwitch.city = true;
             self.pageSwitch.district = false;
+            self.address.city = '';
+            self.address.district = '';
+            self.street = '';
         };
 
+        /**
+         * 选择城市
+         * @param index
+         */
         this.selectDistrict = function (index) {
             self.currentIndex.city = index;
             self.currentIndex.district = '';
             self.pageSwitch.district = true;
+            self.address.district = '';
+            self.street = '';
         };
 
+        /**
+         * 选择区县
+         * @param index
+         */
         this.selectOver = function (index) {
             self.currentIndex.district = index;
+            self.street = '';
         };
 
+        /**
+         * 确认选择地址
+         */
         this.confirmSle = function () {
             self.pageSwitch = {
                 province : false,

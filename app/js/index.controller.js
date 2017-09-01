@@ -32,7 +32,26 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider',function($s
                     return $ocLazyLoad.load({
                         name:'app',
                         files:[
-                            './js/citySelector/citySelector.controller.js'
+                            './js/citySelector/citySelector.controller.js',
+                            './directive/test.directive.js'
+                        ]
+                    });
+                }
+
+                ]
+            }
+        })
+        .state('dmDirective', {
+            url: '/dmDirective',
+            templateUrl: './views/dmDirective/dmDirective.html',
+            controller:'dmDirective.controller as ctrl',
+            resolve :{
+                deps:['$ocLazyLoad',function($ocLazyLoad){
+                    return $ocLazyLoad.load({
+                        name:'app',
+                        files:[
+                            './js/dmDirective/dmDirective.controller.js',
+                            './directive/test.directive.js'
                         ]
                     });
                 }
