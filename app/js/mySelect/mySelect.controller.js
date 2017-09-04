@@ -15,6 +15,8 @@ function mySelectController($scope,$http){
         {name:'杨旺旺'}
     ];
 
+    $scope.tips = '\u2718';
+
     //获取当前对象
     var ctrl = this;
 

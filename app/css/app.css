@@ -7,6 +7,20 @@
 }
 
 /*
+    提示消息
+*/
+span[tipsStatus]{
+    padding:0 10px;
+}
+span[tipsStatus='success']{
+    color:green;
+}
+
+span[tipsStatus='error']{
+    color:#ff0000;
+}
+
+/*
     自定义下拉框样式表
 */
 div[mySelect]{
