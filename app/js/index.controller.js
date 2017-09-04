@@ -59,4 +59,21 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider',function($s
                 ]
             }
         })
+        .state('eChart', {
+            url: '/eChart',
+            templateUrl: './views/eChartDemo/eChart.html',
+            controller:'eChart.controller as ctrl',
+            resolve :{
+                deps:['$ocLazyLoad',function($ocLazyLoad){
+                    return $ocLazyLoad.load({
+                        name:'app',
+                        files:[
+                            './js/eChartDemo/eChart.controller.js'
+                        ]
+                    });
+                }
+
+                ]
+            }
+        })
 }]);

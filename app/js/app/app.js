@@ -7,5 +7,6 @@ angular.module('app',[
     'mySelect',
     'oc.lazyLoad',
     'ui.router',
-    'citySelector'
+    'citySelector',
+    'eChart'
 ]);

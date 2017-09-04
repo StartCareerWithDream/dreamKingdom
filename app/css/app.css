@@ -200,3 +200,11 @@ div[citySelectArea] ul::-webkit-scrollbar-resizer  {
     background:#000;
 }
 
+/*
+    Echart 模板样式
+*/
+
+div[echartDemo]{
+    width:100%;
+    height:400px;
+}
