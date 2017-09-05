@@ -8,8 +8,8 @@
         controller:function(){
 
         },
-        binding:{
-            objId:'='
+        bindings:{
+            id:"="
         }
     });
 })();

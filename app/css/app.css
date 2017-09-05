@@ -208,3 +208,64 @@ div[echartDemo]{
     width:100%;
     height:400px;
 }
+
+
+/*
+  情景色设置
+*/
+
+p{
+    margin:0;
+}
+div[hdBgColor]{
+    width:100%;
+    height:auto;
+    padding:9px 10px;
+    margin:10px auto;
+}
+div[hdBgColor='info']{
+    color:#12699B;
+    background:rgba(245, 253, 254, 1);
+    border:1px solid rgba(154, 208, 235, 1);
+}
+div[hdBgColor='warn']{
+    color:#5A4116;
+    background:rgba(255, 247, 236, 1);
+    border:1px solid rgba(255, 210, 72, 1);
+}
+div[hdBgColor='error']{
+    color:#CB392E;
+    background:rgba(255, 245, 245, 1);
+    border:1px solid rgba(213, 147, 147, 1);
+}
+div[hdBgColor='success']{
+    color:#4E8934;
+    background:rgba(241, 249, 238, 1);
+    border:1px solid rgba(143, 203, 118, 1);
+}
+
+
+
+div[hdBgMedio]{
+    float:left;
+    width:auto;
+    margin:0 20px;
+}
+
+i[tipsIcon]{
+    float:left;
+    width:20px;
+    height:20px;
+}
+
+i[closeIcon]{
+    float:right;
+    width:20px;
+    height:20px;
+}
+
+i[closeIcon]:after{
+    overflow: hidden;
+    clear:both;
+    zoom:1;
+}

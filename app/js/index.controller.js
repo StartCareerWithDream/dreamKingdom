@@ -32,8 +32,7 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider',function($s
                     return $ocLazyLoad.load({
                         name:'app',
                         files:[
-                            './js/citySelector/citySelector.controller.js',
-                            './directive/test.directive.js'
+                            './js/citySelector/citySelector.controller.js'
                         ]
                     });
                 }
