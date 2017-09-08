@@ -15,7 +15,7 @@
             var eChartObj = echarts.init(htmlObj);
 
             //柱状图配置
-           /* var options = {
+            var options = {
                 title:{
                     text:'一年级月考成绩分布'
                 },
@@ -32,11 +32,11 @@
                 //name=legend.data的时候才能显示图例
                 series:[{
                     name:'一班',
-                    type:'line',
+                    type:'bar',
                     data:['8','12','32','45','21','1']
                 },{
                     name:'二班',
-                    type:'line',
+                    type:'bar',
                     data:['4','10','20','60','30','5']
                 }],
                 color: ['#A3E28F','#ff0000'],
@@ -46,7 +46,7 @@
                     bottom: '3%',
                     containLabel: true
                 }
-            };*/
+            };
 
           /* var options = {
                backgroundColor: '#2c343c',
@@ -74,7 +74,7 @@
                ]
            };*/
 
-            var base = +new Date(1968, 9, 3);
+         /*   var base = +new Date(1968, 9, 3);
             var oneDay = 24 * 3600 * 1000;
             var date = [];
 
@@ -158,7 +158,7 @@
                         data: data
                     }
                 ]
-            };
+            };*/
 
 
 

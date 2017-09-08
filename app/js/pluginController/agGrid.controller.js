@@ -8,21 +8,21 @@
 
     function agGridController($scope) {
         this.id = 'tableDemo';
+        var self = this;
 
-        this.rows = [
-            {make: "Toyota", model: "Celica", price: 35000},
-            {make: "Ford", model: "Mondeo", price: 32000},
-            {make: "Porsche", model: "Boxter", price: 72000}
+        var columnsDefs = [
+            {headerName: "区域", field: "regionName", pinned: 'left', suppressMovable: true,headerClass:'textLeft', cellStyle: {'text-align': "left"}},
+            {headerName: "项目", field: "projectName", cellStyle: {'text-align': "left"},headerClass:'textLeft'},
+            {headerName: "楼宇", field: "buildingName", cellStyle: {'text-align': "left"},headerClass:'textLeft'},
+            {headerName: "楼层", field: "floorName", cellStyle: {'text-align': "left"},headerClass:'textLeft'}
         ];
-
-        this.columns = [
-            {headerName: "Make", field: "make"},
-            {headerName: "Model", field: "model", cellRendererFramework: RedComponentComponent},
-            {headerName: "Price", field: "price"}
+        var rowsData = [
+            {table:'表格'}
         ];
 
         $scope.gridOptions = {
-            columnDefs: columnDefs,
+            columnDefs: columnsDefs,
+            rowData: rowsData,
             headerHeight: 36,
             rowHeight: 36,
             minColWidth: 180,
@@ -35,5 +35,6 @@
             },
             suppressNoRowsOverlay:true
         };
+
     }
 })();

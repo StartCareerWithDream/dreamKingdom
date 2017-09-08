@@ -30,29 +30,30 @@ div[mySelect]{
     position: relative;
 }
 
-div[mySelect] ul::-webkit-scrollbar {
+div[mySelect] ul::-webkit-scrollbar,.ag-body-viewport::-webkit-scrollbar {
     width:10px;
-    height:3px;
+    height:10px;
+    cursor: pointer;
 }
-div[mySelect] ul::-webkit-scrollbar-button    {
+div[mySelect] ul::-webkit-scrollbar-button ,.ag-body-viewport::-webkit-scrollbar-button   {
     background-color:#ccc;
 }
-div[mySelect] ul::-webkit-scrollbar-track     {
+div[mySelect] ul::-webkit-scrollbar-track ,.ag-body-viewport::-webkit-scrollbar-track    {
     background:#fff;
 }
-div[mySelect] ul::-webkit-scrollbar-track-piece {
+div[mySelect] ul::-webkit-scrollbar-track-piece,.ag-body-viewport::-webkit-scrollbar-track-piece  {
     background:#fff;
     border:1px solid rgba(200,200,200,.5);
     box-shadow:  0 0 5px #eee inset;
 }
-div[mySelect] ul::-webkit-scrollbar-thumb{
+div[mySelect] ul::-webkit-scrollbar-thumb,.ag-body-viewport::-webkit-scrollbar-thumb{
     background:#666;
     border-radius:5px;
 }
-div[mySelect] ul::-webkit-scrollbar-corner {
+div[mySelect] ul::-webkit-scrollbar-corner,.ag-body-viewport::-webkit-scrollbar-corner {
     background:#82AFFF;
 }
-div[mySelect] ul::-webkit-scrollbar-resizer  {
+div[mySelect] ul::-webkit-scrollbar-resizer,.ag-body-viewport::-webkit-scrollbar-resizer  {
     background:#000;
 }
 

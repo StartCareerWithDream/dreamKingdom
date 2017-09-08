@@ -67,7 +67,8 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider',function($s
                     return $ocLazyLoad.load({
                         name:'app',
                         files:[
-                            './js/pluginController/eChart.controller.js'
+                            './js/pluginController/eChart.controller.js',
+                            './bower_components/Echarts/echarts.js'
                         ]
                     });
                 }
