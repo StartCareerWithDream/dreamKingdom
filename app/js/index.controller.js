@@ -60,14 +60,31 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider',function($s
         })
         .state('eChart', {
             url: '/eChart',
-            templateUrl: './views/eChartDemo/eChart.html',
+            templateUrl: './views/pluginView/eChart.html',
             controller:'eChart.controller as ctrl',
             resolve :{
                 deps:['$ocLazyLoad',function($ocLazyLoad){
                     return $ocLazyLoad.load({
                         name:'app',
                         files:[
-                            './js/eChartDemo/eChart.controller.js'
+                            './js/pluginController/eChart.controller.js'
+                        ]
+                    });
+                }
+
+                ]
+            }
+        })
+        .state('agGrid', {
+            url: '/agGrid',
+            templateUrl: './views/pluginView/agGrid.html',
+            controller:'agGrid.controller as ctrl',
+            resolve :{
+                deps:['$ocLazyLoad',function($ocLazyLoad){
+                    return $ocLazyLoad.load({
+                        name:'app',
+                        files:[
+                            './js/pluginController/agGrid.controller.js'
                         ]
                     });
                 }
