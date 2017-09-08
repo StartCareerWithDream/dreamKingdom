@@ -17,7 +17,7 @@
             {headerName: "楼层", field: "floorName", cellStyle: {'text-align': "left"},headerClass:'textLeft'}
         ];
         var rowsData = [
-            {table:'表格'}
+            {regionName:'上海',projectName:'海鼎大楼建设',buildingName:'海鼎大楼',floorName:'一楼'}
         ];
 
         $scope.gridOptions = {
@@ -26,7 +26,6 @@
             headerHeight: 36,
             rowHeight: 36,
             minColWidth: 180,
-            getMainMenuItems: getMainMenuItems,
             localeText: {
                 pinLeft: '固定在左侧',
                 pinRight: '固定在右侧',
