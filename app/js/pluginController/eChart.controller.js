@@ -11,158 +11,129 @@
         var self = this;
 
         $timeout(function () {
+            //ehcart容器，不能再单个容器下初始化多个echart实例
             var htmlObj = document.getElementById(self.element_id);
+          //  var htmlObjNew = document.getElementById(self.element_id+'_new');
+
+            //初始化echart对象，将得到一个echartsInstance对象
             var eChartObj = echarts.init(htmlObj);
+           // var eChartObjNew = echarts.init(htmlObjNew);
 
-            //柱状图配置
+
+            //设置多个实例联动有两种方法
+            //1.设置group id
+          /*  eChartObj.group = 'group_one';
+            eChartObjNew.group = 'group_one';
+            echarts.connect('group_one');*/
+            //2.直接传入需要联动的实例数组
+             /*echarts.connect([eChartObj,eChartObjNew]); */
+
+           //配置项
             var options = {
-                title:{
-                    text:'一年级月考成绩分布'
+                title : {
+                    text: '世界人口总量',
+                    subtext: '数据来自网络'
                 },
-                tooltip: {},
-                legend:{
-                    data:['一班','二班']
+                tooltip : {
+                    trigger: 'axis'
                 },
-                //X轴设置
-                xAxis:{
-                    data:['60分以下','60分','70分','80分','90分','100分']
-                },
-                yAxis:{
-                },
-                //name=legend.data的时候才能显示图例
-                series:[{
-                    name:'一班',
-                    type:'bar',
-                    data:['8','12','32','45','21','1']
-                },{
-                    name:'二班',
-                    type:'bar',
-                    data:['4','10','20','60','30','5']
-                }],
-                color: ['#A3E28F','#ff0000'],
-                grid: {
-                    left: '3%',
-                    right: '4%',
-                    bottom: '3%',
-                    containLabel: true
-                }
-            };
-
-          /* var options = {
-               backgroundColor: '#2c343c',
-               visualMap: {
-                   show: false,
-                   min: 80,
-                   max: 600,
-                   inRange: {
-                       colorLightness: [0, 1]
-                   }
-               },
-               series : [
-                   {
-                       name: '访问来源',
-                       type: 'pie',
-                       radius: '55%',
-                       data:[
-                           {value:235, name:'视频广告'},
-                           {value:274, name:'联盟广告'},
-                           {value:310, name:'邮件营销'},
-                           {value:335, name:'直接访问'},
-                           {value:400, name:'搜索引擎'}
-                      ]
-                   }
-               ]
-           };*/
-
-         /*   var base = +new Date(1968, 9, 3);
-            var oneDay = 24 * 3600 * 1000;
-            var date = [];
-
-            var data = [Math.random() * 300];
-
-            for (var i = 1; i < 20000; i++) {
-                var now = new Date(base += oneDay);
-                date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
-                data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
-            }
-
-            var options = {
-                tooltip: {
-                    trigger: 'axis',
-                    position: function (pt) {
-                        return [pt[0], '10%'];
-                    }
-                },
-                title: {
-                    left: 'center',
-                    text: '大数据量面积图',
+                legend: {
+                    data:['2011年', '2012年']
                 },
                 toolbox: {
-                    feature: {
-                        dataZoom: {
-                            yAxisIndex: 'none'
-                        },
-                        restore: {},
-                        saveAsImage: {}
+                    show : true,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        magicType: {show: true, type: ['line', 'bar']},
+                        restore : {show: true},
+                        saveAsImage : {show: true}
                     }
                 },
-                xAxis: {
-                    type: 'category',
-                    boundaryGap: false,
-                    data: date
-                },
-                yAxis: {
-                    type: 'value',
-                    boundaryGap: [0, '100%']
-                },
-                dataZoom: [{
-                    type: 'inside',
-                    start: 0,
-                    end: 10
-                }, {
-                    start: 0,
-                    end: 10,
-                    handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
-                    handleSize: '80%',
-                    handleStyle: {
-                        color: '#fff',
-                        shadowBlur: 3,
-                        shadowColor: 'rgba(0, 0, 0, 0.6)',
-                        shadowOffsetX: 2,
-                        shadowOffsetY: 2
-                    }
-                }],
-                series: [
+                calculable : true,
+                xAxis : [
                     {
-                        name:'模拟数据',
-                        type:'line',
-                        smooth:true,
-                        symbol: 'none',
-                        sampling: 'average',
-                        itemStyle: {
-                            normal: {
-                                color: 'rgb(255, 70, 131)'
+                        type : 'value',
+                        boundaryGap : [0, 0.01]
+                    }
+                ],
+                grid: { // 控制图的大小，调整下面这些值就可以，
+                    x: 400,//x的值可以空值y轴与label标签的距离，效果如下图：
+                    x2: 100,
+                    y2: 50,// y2可以控制 X轴跟Zoom控件之间的间隔，避免以为倾斜后造成 label重叠到zoom上
+                },
+                yAxis : [
+                    {
+                        type : 'category',
+                        data : ['巴西闪亮的空间粉丝的房间里睡觉法律手段尚福林时间浪费时间f'
+                            ,'印尼三家公司的房间里睡上了飞机哦我i金佛我i额酸辣粉鸡尾酒佛问'
+                            ,'美国','印度','中国'],
+                        axisLabel:{
+                            interval: 0,//标签设置为全部显示
+                            formatter:function(params){
+                                var newParamsName = "";// 最终拼接成的字符串
+                                var paramsNameNumber = params.length;// 实际标签的个数
+                                var provideNumber = 20;// 每行能显示的字的个数
+                                var rowNumber = Math.ceil(paramsNameNumber / provideNumber);// 换行的话，需要显示几行，向上取整
+                                /**
+                                 * 判断标签的个数是否大于规定的个数， 如果大于，则进行换行处理 如果不大于，即等于或小于，就返回原标签
+                                 */
+// 条件等同于rowNumber>1
+                                if (paramsNameNumber > provideNumber) {
+                                    /** 循环每一行,p表示行 */
+                                    for (var p = 0; p < rowNumber; p++) {
+                                        var tempStr = "";// 表示每一次截取的字符串
+                                        var start = p * provideNumber;// 开始截取的位置
+                                        var end = start + provideNumber;// 结束截取的位置
+// 此处特殊处理最后一行的索引值
+                                        if (p == rowNumber - 1) {
+// 最后一次不换行
+                                            tempStr = params.substring(start, paramsNameNumber);
+                                        } else {
+// 每一次拼接字符串并换行
+                                            tempStr = params.substring(start, end) + "\n";
+                                        }
+                                        newParamsName += tempStr;// 最终拼成的字符串
+                                    }
+
+                                } else {
+// 将旧标签的值赋给新标签
+                                    newParamsName = params;
+                                }
+//将最终的字符串返回
+                                return newParamsName
+
                             }
-                        },
-                        areaStyle: {
-                            normal: {
-                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                    offset: 0,
-                                    color: 'rgb(255, 158, 68)'
-                                }, {
-                                    offset: 1,
-                                    color: 'rgb(255, 70, 131)'
-                                }])
-                            }
-                        },
-                        data: data
+                        }
+                    }
+                ],
+                series : [
+                    {
+                        name:'2011年',
+                        type:'bar',
+                        data:[18203, 23489, 29034, 104970, 131744]
+                    },
+                    {
+                        name:'2012年',
+                        type:'bar',
+                        data:[19325, 23438, 31000, 121594, 134141]
                     }
                 ]
-            };*/
+            };
 
-
+            //配置echart图表
+        /*    eChartObj.resize({
+                width:'1015px',//不支持百分比
+                height:'600px'
+            });*/
+            eChartObj.dispatchAction({
+                type:'highlight',
+                name:'意向'
+            });
 
             eChartObj.setOption(options);
+         //   eChartObjNew.setOption(options);
+
         });
     }
 

@@ -4,36 +4,64 @@
 (function () {
     'use strict';
 
-    angular.module('app').controller('agGrid.controller',['$scope',agGridController]);
+    angular.module('app').controller('agGrid.controller',['$scope','$timeout',agGridController]);
 
-    function agGridController($scope) {
+    function agGridController($scope,$timeout) {
         this.id = 'tableDemo';
         var self = this;
 
         var columnsDefs = [
-            {headerName: "区域", field: "regionName", pinned: 'left', suppressMovable: true,headerClass:'textLeft', cellStyle: {'text-align': "left"}},
-            {headerName: "项目", field: "projectName", cellStyle: {'text-align': "left"},headerClass:'textLeft'},
-            {headerName: "楼宇", field: "buildingName", cellStyle: {'text-align': "left"},headerClass:'textLeft'},
-            {headerName: "楼层", field: "floorName", cellStyle: {'text-align': "left"},headerClass:'textLeft'}
-        ];
-        var rowsData = [
-            {regionName:'上海',projectName:'海鼎大楼建设',buildingName:'海鼎大楼',floorName:'一楼'}
+            {
+                headerName: "Athlete Details",
+                children: [
+                    {headerName: "Name", field: "name"},
+                    {headerName: "Age", field: "age"},
+                    {headerName: "Country", field: "country"}
+                ]
+            },
+            {
+                headerName: "Sports Results",
+                children: [
+                    {headerName: "Sport", field: "sport"},
+                    {headerName: "Total", columnGroupShow: 'closed',field: "sport"},
+                    {headerName: "Gold", columnGroupShow: 'open',field: "gold"},
+                    {headerName: "Silver", columnGroupShow: 'open',field: "silver"},
+                    {headerName: "Bronze", columnGroupShow: 'open',field: "bronze"}
+                ]
+            }
         ];
 
-        $scope.gridOptions = {
+        var rowsData = [
+            {name:'杨旺旺',age:'23',country:'中国',sport:'600',gold:'100',silver:'200',bronze:'300'}
+        ];
+
+        var newRowsData = [
+            {name:'巴啦啦',age:'23',country:'中国',sport:'600',gold:'100',silver:'200',bronze:'300'}
+        ];
+
+        this.gridOptions = {
             columnDefs: columnsDefs,
-            rowData: rowsData,
             headerHeight: 36,
             rowHeight: 36,
             minColWidth: 180,
+            enableColResize: true,
             localeText: {
                 pinLeft: '固定在左侧',
                 pinRight: '固定在右侧',
                 noPin: '不固定',
-                pinColumn: '固定列',
+                pinColumn: '固定列'
             },
-            suppressNoRowsOverlay:true
+            suppressNoRowsOverlay:false,
+            rowSelection: 'single'
         };
+
+
+        $timeout(function() {
+            console.log(self.gridOptions);
+            self.gridOptions.api.sizeColumnsToFit();
+            self.gridOptions.api.setRowData(rowsData);
+           // self.gridOptions.api.updateRowData(rowsData,newRowsData);
+        }, 0);
 
     }
 })();
