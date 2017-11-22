@@ -10,5 +10,6 @@ angular.module('app',[
     'oc.lazyLoad',
     'ui.router',
     'citySelector',
-    'eChart'
+    'eChart',
+    'myEditor'
 ]);

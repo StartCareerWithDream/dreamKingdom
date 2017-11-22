@@ -1,6 +1,13 @@
 /*
     全局样式表
 */
+
+ul,li{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
 .active{
     background:#11C3FE!important;
     color:#fff!important;
@@ -208,4 +215,65 @@ div[citySelectArea] ul::-webkit-scrollbar-resizer  {
 div[echartDemo],div[agGridDemo],canvas[echartDemo],canvas[agGridDemo]{
     width:100%;
     height:500px;
+}
+
+
+/*
+    myCustomCSS
+*/
+*[scrollBar]::-webkit-scrollbar {
+    width:10px;
+    height:3px;
+}
+*[scrollBar]::-webkit-scrollbar-button    {
+    background-color:#ccc;
+}
+*[scrollBar]::-webkit-scrollbar-track     {
+    background:#fff;
+}
+*[scrollBar]::-webkit-scrollbar-track-piece {
+    background:#fff;
+    border:1px solid rgba(200,200,200,.5);
+    box-shadow:  0 0 5px #eee inset;
+}
+*[scrollBar]::-webkit-scrollbar-thumb{
+    background:#666;
+    border-radius:5px;
+}
+*[scrollBar]::-webkit-scrollbar-corner {
+    background:#82AFFF;
+}
+*[scrollBar]::-webkit-scrollbar-resizer  {
+    background:#000;
+}
+*[editorContainer]{
+    box-sizing: border-box;
+}
+
+*[editorMenuBar]{
+    height:40px;
+    background: linear-gradient(to right top, #fff1eb 0%, #ace0f9 100%);
+    border:1px solid #ace0f9;
+    padding:10px 15px;
+}
+*[editorContent]{
+    min-height: 400px;
+    max-height: 400px;
+    border:1px solid #ace0f9;
+    border-top: none;
+    overflow-x:auto;
+    overflow-y:scroll;
+    padding:8px 10px; 
+    white-space: per;
+}
+*[editorMenuBtn]{
+    float:left;
+    width:20px;
+    height:20px;
+    line-height: 20px;
+}
+*[editorMenuBtn] i{
+    width:20px;
+    height:20px;
+    line-height: 20px;
 }

@@ -93,4 +93,23 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider',function($s
                 ]
             }
         })
+        //富文本编辑器
+        .state('myEditor', {
+            url: '/myEditor',
+            templateUrl: './views/myEditor/myEditor.html',
+            controller:'myEditor.controller as ctrl',
+            resolve :{
+                deps:['$ocLazyLoad',function($ocLazyLoad){
+                    return $ocLazyLoad.load({
+                        name:'app',
+                        files:[
+                            './js/myEditor/myEditor.controller.js',
+                            './js/myEditor/myEditor.jquery.js'
+                        ]
+                    });
+                }
+
+                ]
+            }
+        })
 }]);
