@@ -5,9 +5,5 @@
  angular.module('app').controller('myEditor.controller',["$scope","$timeout",myEditor]);
 
 function myEditor($scope,$timeout) {
-	/*$timeout(function(){
-		var myEditor = new dreamKindomEditor().init('myEditor');
-		console.log(myEditor);
-	},3000);*/
-   
+
 }
